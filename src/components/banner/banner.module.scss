@@ -1,0 +1,38 @@
+.banner-box {
+  position: relative;
+  height: 283px;
+  .banner-item {
+    display: flex;
+    margin: 0 auto;
+    width: 984px;
+    height: 283px;
+    .banner-item__img {
+      flex-shrink: 0;
+      width: 730px;
+      height: 100%;
+    }
+  }
+  .download {
+    width: 254px;
+    height: 285px;
+    background: url(https://s2.music.126.net/style/web2/img/index/download.png?39a00f92c5edd8fe78ffb21155c22faa) no-repeat 0 0;
+  }
+  .prev {
+    position: absolute;
+    left: 120px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .next {
+    position: absolute;
+    right: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

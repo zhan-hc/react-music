@@ -1,0 +1,60 @@
+.song-card {
+  width: 140px;
+  .img-box {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .img-box__bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      height: 27px;
+      padding: 0 10px;
+      color: #ccc;
+      background-color: rgba(0,0,0,.5);
+      font-size: 12px;
+      border-top: 1px solid #222226;
+      .icon-play {
+        width: 16px;
+        height: 17px;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-image: url(https://s2.music.126.net/style/web2/img/iconall.png?292e92f1d562966b4747d1cf5078ffe3);
+        &:hover {
+          cursor: pointer;
+          background-position: 0 -60px;
+        }
+      }
+      .icon-listen {
+        width: 14px;
+        height: 11px;
+        background-position: 0 -24px;
+        background-repeat: no-repeat;
+        background-image: url(https://s2.music.126.net/style/web2/img/iconall.png?292e92f1d562966b4747d1cf5078ffe3);
+      }
+      .play-num {
+        flex: 1;
+        margin-left: 10px;
+      }
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  .song-name {
+    margin-top: 10px;
+    font-size: 14px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

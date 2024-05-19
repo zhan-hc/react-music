@@ -1,0 +1,43 @@
+.song-box {
+  .block-content{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    .block-item {
+      margin-left: 40px;
+      margin-bottom: 50px;
+      &:nth-child(4n + 1) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+.tab-box {
+  display: flex;
+  
+  .tab-item {
+    position: relative;
+    margin-left: 40px;
+    color: #666666;
+    font-size: 14px;
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 10px;
+      background-color: #ccc;
+    }
+  }
+}
