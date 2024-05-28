@@ -1,20 +1,23 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from './store'
+import { Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLoading } from './components/loading/LoadingContext';
+import { setLoadingHandler } from './components/loading/loadingManager'
+import { Spin } from 'antd';
 import Home from './components/pages/home/home'
 import About from './components/about'
 
 function App() {
-
+  const { loading, setLoading } = useLoading();
+  useEffect(() => {
+    setLoadingHandler(setLoading);
+  }, [setLoading]);
   return (
-    <Provider store={store}>
-      <BrowserRouter> 
-        <Routes>
-          <Route  path="/" element={<Home/>} />
-          <Route  path="/about" element={<About/>} />
-        </Routes>
-      </BrowserRouter>
-    </Provider>
+    <Spin spinning={loading}>
+      <Routes>
+        <Route  path="/" element={<Home/>} />
+        <Route  path="/about" element={<About/>} />
+      </Routes>
+    </Spin>
   )
 }
 

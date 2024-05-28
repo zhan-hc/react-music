@@ -2,9 +2,12 @@
   display: flex;
   width: 984px;
   margin: 0 auto;
-  padding: 20px;
   border: 1px solid #d3d3d3;
   box-sizing: border-box;
+  .discover-left {
+    width: 729px;
+    box-sizing: border-box;
+  }
   .discover-right {
     flex-shrink: 0;
     width: 250px;

@@ -1,9 +1,9 @@
 import axios from "axios";
-
 import {
   handleChangeRequestHeader,
   handleNetworkError,
 } from "./tools";
+import { startLoading, stopLoading } from '@/components/loading/loadingManager';
 
 type Fn = (data: FcResponse<any>) => unknown;
 
@@ -18,6 +18,9 @@ export interface FcResponse<T> {
   data: T;
 }
 
+let reqNum = 0
+// const { setLoading } = useLoading();
+
 // 创建axios实例
 const service = axios.create({
   baseURL: 'https://netease-cloud-music-api-eight-bice.vercel.app', // api 的 base_url
@@ -26,6 +29,11 @@ const service = axios.create({
 })
 
 service.interceptors.request.use((config) => {
+  reqNum += 1
+  // if (!curTime) {
+  //   curTime = +new Date()
+  // }
+  startLoading()
   config = handleChangeRequestHeader(config);
   // config = handleConfigureAuth(config);
   return config;
@@ -33,6 +41,8 @@ service.interceptors.request.use((config) => {
 
 service.interceptors.response.use(
   (response) => {
+    reqNum -= 1
+    !reqNum && stopLoading()
     if (response.status !== 200) return Promise.reject(response.data);
     // handleAuthError(response.data.errno);
     // handleGeneralError(response.data.errno, response.data.errmsg);

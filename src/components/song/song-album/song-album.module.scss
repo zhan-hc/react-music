@@ -1,0 +1,68 @@
+.album-box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 118px;
+  height: 150px;
+  margin-left: 11px;
+  .album-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+  }
+  .album-bg {
+    background: url('https://s2.music.126.net/style/web2/img/coverall.png?9576c275efd439152f073cf253ff74e3');
+    width: 118px;
+    height: 100px;
+    background-position: 0 -570px;
+  }
+}
+.song-box {
+  padding: 0 20px 20px;
+  .block-content {
+    position: relative;
+    padding-top: 20px;
+    .album-row {
+      display: flex !important;
+      align-items: center;
+      background: #f5f5f5;
+      border: 1px solid #d3d3d3;
+      height: 180px;
+      font-size: 14px;
+      padding-left: 16px;
+      color: #666;
+      .album-name {
+        color: #000;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .album-artist {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+}
+.prev,.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+  background: url('https://s2.music.126.net/style/web2/img/index/index.png?2d24d46cbc8c1e5304fe8b3608ff1e6c');
+  width: 17px;
+  height: 17px;
+  background-position: -260px -75px;
+  &:hover {
+    cursor: pointer;
+    background-position: -280px -75px;
+  }
+}
+.next {
+  left: unset;
+  right: 5px;
+  transform: rotate(180deg);
+}

@@ -2,5 +2,9 @@
 
 export const homeDataResKey:any = {
   'bannerList': 'banners',
-  'playList': 'result'
+  'playList': 'result',
+  'artistList': 'artists',
+  'hotDjList': 'data.list',
+  'newAlbumList': 'products',
+  'topList': 'list'
 }

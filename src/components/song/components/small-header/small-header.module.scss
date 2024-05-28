@@ -1,0 +1,21 @@
+.song-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+  font-size: 12px;
+  .header-label {
+    flex: 1;
+    flex-shrink: 0;
+    font-weight: bold;
+    color: #333;
+  }
+  .header-right {
+    color: #666;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
